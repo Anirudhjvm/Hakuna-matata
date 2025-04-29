@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta https-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>CSS Envelope + Letter (open/close on click)</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Dear pokie</strong>
+                        <p>
+                            Pata hai shayad.                   
+                            Thumari julfo main ulajh gaya hu.
+                            Aur nikal nahi paa raha hu.
+                            Teri aakho me dub raha hu.
+                            Tayr nahi pa raha. 
+                            Teri Bato mai kho sa gaya hu.
+                            Aur ab rasta nazar nahi aaraha. 
+                            Ye jo kehar dha rahi ho apni khubsurti se.
+                            Bohot Galat Hai.....  Mai aage kuch likh nahi paa raha. 
+                            Aur agar likh pata yee.
+                            Tho meri jaan.
+                            Tum utni khubsurt 
+                            bhi nahi hoo...
+                            lekin tum bohot khubsurt hoo... 
+                            Tumhe pata nai hai...
+                            lekin tum hoo...
+                            Buss Tumhe....
+                            Meri Nazaaro SE Dekhna Ho Ga.
+                        </p>
+                        <strong>........HAPPY BIRTHDAY</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>    
+    </div>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+    </script>
+</body>
+</html>
+<p></p>
