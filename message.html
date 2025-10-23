@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Birthday Message</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .falling-hearts {
+            position: absolute;
+            top: -50px;
+            font-size: 2rem;
+            color: #ff69b4;
+            animation: fall 8s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff69b4;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff69b4;
+            }
+        }
+
+        .typewriter-container {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #ff69b4;
+        }
+
+        .typewriter {
+            font-size: 1.4rem;
+            color: white;
+            line-height: 1.8;
+            min-height: 200px;
+            text-align: left;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .cursor {
+            display: inline-block;
+            background-color: white;
+            width: 3px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .navigation {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .heart-decoration {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 105, 180, 0.6);
+            animation: heartbeat 2s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .message-box {
+                padding: 30px 20px;
+            }
+            .title {
+                font-size: 2rem;
+            }
+            .typewriter {
+                font-size: 0.9rem;
+            }
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message-box">
+            <h1 class="title">💌 Special Anniversary Message 💌</h1>
+            
+            <div class="typewriter-container">
+                <div class="typewriter" id="typewriter">
+                    <span class="cursor" id="cursor"></span>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <a href="index.html" class="nav-btn">🏠 Home</a>
+                <a href="gallery.html" class="nav-btn">📸 Gallery</a>
+                <a href="surprise.html" class="nav-btn">🎁 Surprise</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Typewriter effect
+        const message = `🎉Happy Anniversary Pokie!
+Aaj humlog ka 1 saal complete ho gya hai or iss 1 saal mai humlog ke bich mai itna undersatnding ho gya hai jitna bohot log ko bohot saal lg jata hai. Ik iss 1 saal mai bohot ups and downs aya hai [specially mera :) ] and I know mai tumko bohot bar hurt kiya kiya but tum har bar mereko maaf ki ho and don't know mai tumko iske liyea thank you kaise bolu but thank you pokie and I promise ki mai tumko hamesha khush rakhne ka try kerunga tumhara sath nibhaunga even in after life or tumhara har problems ka solution dunga. I promise pokie. And Once Again Happy Anniversary! 🎂🎉💕`;
+
+        let i = 0;
+        const typewriter = document.getElementById('typewriter');
+        const cursor = document.getElementById('cursor');
+        
+        function typeWriter() {
+            if (i < message.length) {
+                if (message.charAt(i) === '\n') {
+                    typewriter.innerHTML += '<br>';
+                } else {
+                    typewriter.innerHTML += message.charAt(i);
+                }
+                i++;
+                setTimeout(typeWriter, 50);
+            } else {
+                cursor.style.display = 'none';
+            }
+        }
+
+        // Start typewriter effect after a short delay
+        setTimeout(typeWriter, 1000);
+
+        // Create falling hearts
+        function createFallingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'falling-hearts';
+            heart.innerHTML = ['❤️', '💕', '💖', '💝', '🌹'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            heart.style.fontSize = (Math.random() * 1 + 1.5) + 'rem';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // Create falling hearts continuously
+        setInterval(createFallingHeart, 500);
+
+        // Create decorative hearts around the message box
+        function createHeartDecoration() {
+            const decoration = document.createElement('div');
+            decoration.className = 'heart-decoration';
+            decoration.innerHTML = '💕';
+            decoration.style.left = Math.random() * 100 + '%';
+            decoration.style.top = Math.random() * 100 + '%';
+            decoration.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.body.appendChild(decoration);
+            
+            setTimeout(() => {
+                decoration.remove();
+            }, 4000);
+        }
+
+        // Create heart decorations
+        setInterval(createHeartDecoration, 2000);
+
+        // Initial burst of hearts
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createFallingHeart, i * 200);
+        }
+    </script>
+
+<div class="falling-hearts" style="left: 28.6043%; animation-duration: 5.62972s; font-size: 1.90951rem;">❤️</div><div class="falling-hearts" style="left: 48.2127%; animation-duration: 6.44099s; font-size: 2.12357rem;">💖</div><div class="falling-hearts" style="left: 75.5433%; animation-duration: 5.48254s; font-size: 1.84457rem;">💖</div><div class="falling-hearts" style="left: 57.5097%; animation-duration: 6.11895s; font-size: 1.63415rem;">💖</div><div class="falling-hearts" style="left: 63.0939%; animation-duration: 6.21619s; font-size: 2.098rem;">💝</div><div class="falling-hearts" style="left: 46.0867%; animation-duration: 6.33848s; font-size: 2.25209rem;">💝</div><div class="falling-hearts" style="left: 83.0597%; animation-duration: 7.11136s; font-size: 2.06487rem;">❤️</div><div class="falling-hearts" style="left: 52.2472%; animation-duration: 6.10262s; font-size: 1.79713rem;">🌹</div><div class="heart-decoration" style="left: 95.8506%; top: 65.7%; animation-delay: 1.31239s;">💕</div><div class="falling-hearts" style="left: 78.9604%; animation-duration: 7.30635s; font-size: 1.53064rem;">🌹</div><div class="falling-hearts" style="left: 10.8354%; animation-duration: 7.25839s; font-size: 1.99834rem;">❤️</div><div class="falling-hearts" style="left: 29.7715%; animation-duration: 6.39943s; font-size: 1.95428rem;">💝</div><div class="falling-hearts" style="left: 84.7349%; animation-duration: 7.19446s; font-size: 2.48738rem;">🌹</div><div class="heart-decoration" style="left: 22.7787%; top: 1.2419%; animation-delay: 0.389224s;">💕</div></body></html>
